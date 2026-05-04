@@ -7,7 +7,7 @@ import os
 app = Flask(__name__)
 
 MODEL_PATH = os.path.join(os.path.dirname(
-    __file__), '../ml/models', 'rf_model.pkl')
+    __file__), '', 'rf_model.pkl')
 model = joblib.load(MODEL_PATH)
 print(f"Model loaded from {MODEL_PATH}")
 
@@ -142,7 +142,7 @@ def model_info():
 
 if __name__ == '__main__':
     # Pastikan folder models ada
-    models_dir = os.path.join(os.path.dirname(__file__), 'models')
+    models_dir = os.path.join(os.path.dirname(__file__), '')
     if not os.path.exists(models_dir):
         os.makedirs(models_dir)
         print(f"Created models directory: {models_dir}")
