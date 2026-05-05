@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify, render_template
 import pandas as pd
+from flask_cors import CORS
 import numpy as np
 import joblib
 import os
@@ -15,6 +16,10 @@ FEATURES = [
     'Account Balance', 'Duration of Credit (month)', 'Value Savings/Stocks', 'Credit Amount'
 ]
 
+CORS(app, origins=[
+    "https://loan-eligibility-prediction-website.vercel.app",
+    "http://localhost:3000" 
+])
 
 @app.route('/', methods=['GET'])
 def home():
